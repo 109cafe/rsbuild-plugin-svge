@@ -1,6 +1,6 @@
 {
   "$schema": "https://jsr.io/schema/config-file.v1.json",
   "name": "@109cafe/test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "exports": "./mod.ts"
 }

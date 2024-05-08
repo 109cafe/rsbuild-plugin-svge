@@ -1,5 +1,5 @@
-import type { RsbuildPlugin, RuleSetRule } from "@rsbuild/shared";
-import type { Config } from "@svgr/core";
+import type { RsbuildPlugin, RuleSetRule } from "npm:@rsbuild/shared@^0.6.12";
+import type { Config } from "npm:@svgr/core@^8.1.0";
 
 export interface MassSvgRule {
   test: NonNullable<RuleSetRule["test"]>;
