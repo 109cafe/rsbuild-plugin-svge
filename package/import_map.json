@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@rsbuild/shared": "npm:@rsbuild/shared@0.6.12",
+    "@svgr/core": "npm:@svgr/core@8.1.0"
+  }
+}
