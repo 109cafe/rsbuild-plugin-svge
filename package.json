@@ -1,16 +1,16 @@
 {
   "name": "rsbuild-plugin-mass-svg",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
+  "files": ["dist", "*.md"],
   "scripts": {
     "build": "modern build",
     "build:watch": "modern build -w",
     "change": "modern change",
     "bump": "modern bump",
     "pre": "modern pre",
-    "change-status": "modern change-status",
     "gen-release-note": "modern gen-release-note",
     "release": "modern release"
   },
@@ -19,11 +19,7 @@
       "biome check --apply --no-errors-on-unmatched --colors=force --diagnostic-level=error"
     ]
   },
-  "dependencies": {
-    "@svgr/core": "^8.1.0",
-    "@svgr/plugin-jsx": "^8.1.0",
-    "@svgr/plugin-svgo": "^8.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@modern-js/module-tools": "2.49.2",
     "@rsbuild/shared": "^0.6.11",
