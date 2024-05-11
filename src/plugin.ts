@@ -53,11 +53,12 @@ export function pluginMassSvg({ rules }: PluginMassSvgOptions): RsbuildPlugin {
           } else if (defaultExport === "asset/resource") {
             mergeRule(current, rbSvgRule.oneOf(CHAIN_ID.ONE_OF.SVG_URL)).delete("resourceQuery");
           } else if (defaultExport === "component") {
-            mergeRule(current, rbSvgRule.oneOf(CHAIN_ID.ONE_OF.SVG_REACT)).delete("resourceQuery");
-
-            current.use(CHAIN_ID.USE.SVGR).tap((options) => {
-              return { ...options, ...svgr, exportType: "default", foo: 123 };
-            });
+            mergeRule(current, rbSvgRule.oneOf(CHAIN_ID.ONE_OF.SVG_REACT))
+              .delete("resourceQuery")
+              .use(CHAIN_ID.USE.SVGR)
+              .tap((options) => {
+                return { ...options, ...svgr, exportType: "default" };
+              });
           }
           current.merge(ruleOptions);
         }
