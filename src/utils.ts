@@ -5,9 +5,12 @@ export function mergeRule<T>(
   from: WebpackChain.Rule<T>
 ): WebpackChain.Rule<T> {
   to.merge(from.entries());
-  const uses = from.uses.entries();
-  if (uses) {
-    to.uses.merge(uses);
+
+  for (const _use of from.uses.values()) {
+    const use = _use as unknown as (typeof _use)[0] & { name: string };
+    to.use(use.name)
+      .loader(use.get("loader"))
+      .options({ ...use.get("options") });
   }
   return to;
 }
