@@ -10,7 +10,7 @@ on:
         description: 'Package name'
         required: false
         type: string
-        default: @canary-109cafe/rsbuild-plugin-svge
+        default: '@canary-109cafe/rsbuild-plugin-svge'
 
 jobs:
   build:
