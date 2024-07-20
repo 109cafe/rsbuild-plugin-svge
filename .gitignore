@@ -1,5 +1,5 @@
 .DS_Store
-
+*.tgz
 .pnp
 .pnp.js
 .env.local

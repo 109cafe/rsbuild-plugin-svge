@@ -1,21 +1,30 @@
 {
-  "name": "rsbuild-plugin-mass-svg",
+  "name": "@109cafe/rsbuild-plugin-svge",
   "version": "0.0.0-PLACEHOLDER",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "files": ["dist", "*.md"],
-  "packageManager": "pnpm@9.1.0",
+  "packageManager": "pnpm@9.5.0",
   "scripts": {
     "build": "modern build",
     "build:watch": "modern build -w",
-    "prepublishOnly": "modern build"
+    "prepack": "modern build",
+    "deploy": "npm pack",
+    "prepare": "pnpm --package simple-git-hooks@2.11.1 dlx simple-git-hooks"
   },
   "devDependencies": {
     "@modern-js/module-tools": "2.49.2",
     "@rsbuild/shared": "0.6.13",
     "@svgr/core": "^8.1.0",
     "@types/node": "^20.12.10",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@biomejs/biome": "^1.8.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm --package nano-staged@0.8.0 dlx nano-staged"
+  },
+  "nano-staged": {
+    "*.{js,ts}": "biome check --write --diagnostic-level=error --no-errors-on-unmatched"
   }
 }
