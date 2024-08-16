@@ -5,21 +5,25 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "files": ["dist", "*.md"],
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.7.1",
   "scripts": {
-    "build": "modern build",
-    "build:watch": "modern build -w",
-    "prepack": "modern build",
+    "build": "rslib build",
+    "build:watch": "rslib build -w",
+    "prepack": "rslib build",
     "deploy": "npm pack",
     "prepare": "pnpm --package husky@9.1.1 dlx husky"
   },
   "devDependencies": {
-    "@modern-js/module-tools": "2.49.2",
+    "@rslib/core": "0.0.2",
     "@rsbuild/shared": "0.6.13",
     "@svgr/core": "^8.1.0",
     "@types/node": "^20.12.10",
     "typescript": "^5.4.5",
     "@biomejs/biome": "^1.8.3"
+  },
+  "resolutions": {
+    "@rslib/core": "file:../rslib/packages/core",
+    "rsbuild-plugin-dts": "file:../rslib/packages/plugin-dts"
   },
   "nano-staged": {
     "*.{js,ts}": "biome check --write --diagnostic-level=error --no-errors-on-unmatched"
