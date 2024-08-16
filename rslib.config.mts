@@ -3,13 +3,17 @@ import { defineConfig } from "@rslib/core";
 export default defineConfig({
   source: {
     entry: {
-      index: './src/index.ts',
+      index: "./src/index.ts",
     },
   },
   output: {
+    sourceMap: {
+      js: "source-map",
+    },
+    minify: { js: true },
     distPath: {
-      root: './dist'
-    }
+      root: "./dist",
+    },
   },
   lib: [
     {
@@ -18,9 +22,9 @@ export default defineConfig({
       autoExtension: false,
       output: {
         filename: {
-          js: '[name].cjs'
-        }
-      }
+          js: "[name].cjs",
+        },
+      },
     },
     {
       format: "esm",

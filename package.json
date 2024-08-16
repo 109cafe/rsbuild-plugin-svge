@@ -26,7 +26,7 @@
     "rsbuild-plugin-dts": "file:../rslib/packages/plugin-dts"
   },
   "nano-staged": {
-    "*.{js,ts}": "biome check --write --diagnostic-level=error --no-errors-on-unmatched"
+    "*.{js,ts,cts,mts}": "biome check --write --diagnostic-level=error --no-errors-on-unmatched"
   },
   "repository": {
     "type": "git",
